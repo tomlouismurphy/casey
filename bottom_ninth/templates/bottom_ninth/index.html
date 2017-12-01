@@ -1,0 +1,11 @@
+<h2>Royals Due Up</h2>
+
+{% if batter_list %}
+	<ul>
+	{% for batter in batter_list %}
+		<li><a href="/bottom_ninth/{{ batter.id }}">{{ batter.name }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>The lineup is not constructed at this time.</p>
+{% endif %}

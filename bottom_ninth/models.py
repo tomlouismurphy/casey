@@ -15,6 +15,8 @@ class Batter(models.Model):
 	doubles = models.IntegerField(default=0)
 	triples = models.IntegerField(default=0)
 	home_runs = models.IntegerField(default=0)
+	def __str__(self):
+		return self.name
 
 class Pitcher(models.Model):
 	name = models.CharField(max_length=50)
@@ -23,3 +25,5 @@ class Pitcher(models.Model):
 	walks_allowed = models.IntegerField(default=0)
 	hit_by_pitches_allowed = models.IntegerField(default=0)
 	home_runs_allowed = models.IntegerField(default=0)
+	def __str__(self):
+		return self.name

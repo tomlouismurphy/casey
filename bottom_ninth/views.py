@@ -1,8 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.views import generic
 
-def gamestatus(request):
-	return HttpResponse('It is the bottom of the ninth. The Giants lead 3-2, Madison Bumgarner is pitching, and Eric Hosmer, Billy Butler and Alex Gordon are due up.')
+from .models import Batter, Pitcher
+
+class IndexView(generic.ListView):
+	template_name = 'bottom_ninth/index.html'
+	def get_queryset(self):
+		return Batter.objects.order_by('id')

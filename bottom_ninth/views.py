@@ -12,3 +12,8 @@ class IndexView(generic.ListView):
 	template_name = 'bottom_ninth/index.html'
 	def get_queryset(self):
 		return Batter.objects.order_by('id')
+
+class DetailView(generic.DetailView):
+	model = Batter
+	template_name = 'bottom_ninth/detail.html'
+

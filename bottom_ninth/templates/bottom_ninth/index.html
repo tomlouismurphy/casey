@@ -1,11 +1,47 @@
-<h2>Royals Due Up</h2>
+{% load static %}
 
-{% if batter_list %}
-	<ul>
-	{% for batter in batter_list %}
-		<li><a href="/bottom_ninth/{{ batter.id }}">{{ batter.name }}</a></li>
-	{% endfor %}
-	</ul>
-{% else %}
-	<p>The lineup is not constructed at this time.</p>
-{% endif %}
+<link rel="stylesheet" type="text/css" href="{% static 'bottom_ninth/materialize/materialize.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'bottom_ninth/index.css' %}" />
+
+<div class="row">
+	<div class="col s6">
+		<div class="royalsLineup">
+			<h3>KCR Due Up</h3>
+
+			{% if batter_list %}
+				<ul>
+				{% for batter in batter_list %}
+					{% if batter.position %}
+					<li class="royalPlayer">{{ batter.name }} <a href="/bottom_ninth/{{ batter.id }}">Stats</a></li>
+					{% endif %}
+				{% endfor %}
+				</ul>
+			{% else %}
+				<p>The lineup is not constructed at this time.</p>
+			{% endif %}
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="giantsPitcher">
+			<h3>SFG Pitcher</h3>
+				<p>Placeholder</p>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="royalsBench">
+		<h3>KCR Reserves</h3>
+
+		{% if batter_list %}
+			<ul>
+			{% for batter in batter_list %}
+				{% if not batter.position %}
+				<li class="royalPlayer">{{ batter.name }} <a href="/bottom_ninth/{{ batter.id }}">Stats</a></li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+		{% else %}
+			<p>There are no bench players remaining.</p>
+		{% endif %}
+		</div>
+	</div>
+</div>

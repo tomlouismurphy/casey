@@ -1,0 +1,33 @@
+body {
+	font-family: Verdana;
+}
+
+.royalsLineup {
+	margin: 0;
+	background-color: teal;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 50vh;
+	border: 5px solid black;
+}
+
+.royalsBench {
+	margin: 0;
+	background-color: teal;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 50vh;
+	border: 5px solid black;
+}
+
+.giantsPitcher {
+	margin: 0;
+	background-color: orange;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 50vh;
+}
+
+.royalPlayer {
+	text-align: center;
+}

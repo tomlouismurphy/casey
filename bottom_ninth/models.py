@@ -4,6 +4,7 @@ from django.db import models
 
 class Batter(models.Model):
 	name = models.CharField(max_length=50)
+	position = models.CharField(blank=True, null=True, max_length=50)
 	plate_appearances = models.IntegerField(default=0)
 	at_bats = models.IntegerField(default=0)
 	hits = models.IntegerField(default=0)

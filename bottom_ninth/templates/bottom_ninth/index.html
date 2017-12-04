@@ -5,6 +5,8 @@
 
 <div class="row">
 	<div class="col s6">
+<!-- 		displays all players on batting team
+		that are assigned a field position -->
 		<div class="royalsLineup">
 			<h3>KCR Due Up</h3>
 
@@ -12,21 +14,23 @@
 				<ul>
 				{% for batter in batter_list %}
 					{% if batter.position %}
-					<li class="royalPlayer">{{ batter.name }} <a href="/bottom_ninth/{{ batter.id }}">Stats</a></li>
+					<li class="5class="royalPlayer">{{ batter.name }} <a href="/bottom_ninth/{{ batter.id }}">Stats</a></li>
 					{% endif %}
 				{% endfor %}
 				</ul>
 			{% else %}
-				<p>The lineup is not constructed at this time.</p>
+				<p>The lineup is not assigned at this time.</p>
 			{% endif %}
 		</div>
 	</div>
 	<div class="col s6">
+	<!-- displays current pitcher for team in the field -->
 		<div class="giantsPitcher">
 			<h3>SFG Pitcher</h3>
 				<p>Placeholder</p>
 		</div>
 	</div>
+	<!-- second row of content -->
 	<div class="col s6">
 		<div class="royalsBench">
 		<h3>KCR Reserves</h3>
